@@ -1,0 +1,87 @@
+---
+// Define the array of projects directly in the frontmatter script.
+const otherprojects = [
+  {
+    "url": "https://github.com/saharshbaweja/Python---Password-manager",
+    "title": "Python Password Manager",
+    "description": "A secure application to store and manage passwords. Key features include encryption, password generation, and a user-friendly interface. Developed using Python with libraries like Tkinter."
+  },
+  {
+    "url": "https://github.com/saharshbaweja/Personal-Finance-Manager",
+    "title": "Personal Finance Dashboard",
+    "description": "An interactive dashboard for tracking and visualizing personal finances. Features include budget tracking, expense categorization, and financial goal setting. Built using Python and Dash."
+  },
+  {
+    "url": "https://github.com/saharshbaweja",
+    "title": "Algorithmic Trading Bot",
+    "description": "A bot that analyzes stock market data and executes trades based on strategies. Includes backtesting, risk management, and performance evaluation. Implemented in Python with APIs for market data."
+  },
+  {
+    "url": "https://github.com/saharshbaweja",
+    "title": "Interactive Stock Market Simulator",
+    "description": "A simulator that allows users to practice trading stocks in a risk-free environment. Features real-time data, historical scenarios, and performance analytics. Built with Python and Flask for the backend, and a React.js frontend."
+  }
+  // Add more projects as needed...
+];
+
+// Function to calculate `data-aos-duration` based on index
+function calculateAosDuration(index) {
+  return 1500 + index * 500; // Example: Increment duration by 500ms for each project
+}
+---
+
+<section class="bg-primary">
+  <div class="px-8 2xl:max-w-7xl mx-auto py-32">
+    <div class="space-y-2">
+      <!-- Section Title and Decorative Elements -->
+      <div
+        class="h-0.5 bg-secondary"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+      </div>
+      <h3
+        class="text-secondary text-base font-medium"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
+        <span>Main</span>
+        <span class="font-bold">projects</span>
+      </h3>
+    </div>
+
+    <ul
+      class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
+      role="list"
+    >
+      {
+        otherprojects.map((project, index) => (
+          <li
+            class="flow-root h-full"
+            data-aos="fade-up"
+            data-aos-duration={calculateAosDuration(index)}
+          >
+            <a href={project.url}>
+              <div class="h-full flex flex-col justify-between">
+                <div>
+                  <p class="group-hover:text-secondary/70 text-secondary text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
+                    0{index + 1}.
+                  </p>
+                  <p class="italic shrink-0">{project.title}</p>
+                  <p class="text-base mt-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+                <div>
+                  <p class="mt-3 text-base font-semibold">
+                    Learn more &nbsp; ↗
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

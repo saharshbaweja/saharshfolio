@@ -1,0 +1,50 @@
+---
+// Define testimonials/opinions data
+const humanOpinions = [
+  {
+    name: "GSU:",
+    role: "University Tutor (CS 1301 & Calc 2211)",
+    opinion:
+      "In my current role as a tutor at my university, I provide comprehensive support to students in CS 1301 (Introduction to Computer Science) and Calc 2211 (Calculus I). For CS 1301, I assist students with foundational programming concepts using Python, including data structures, algorithms, and object-oriented programming, guiding them through coding assignments and debugging techniques. In Calc 2211, I help students with advanced calculus topics such as integration techniques, differential equations, and multivariable calculus, offering tailored explanations and problem-solving strategies. My responsibilities include one-on-one tutoring, group study sessions, and developing instructional materials, while collaborating with professors to ensure alignment with course objectives and enhancing the overall learning experience.",
+  },
+  {
+    name: "Project Intern:",
+    role: "Jetson App",
+    opinion:
+      "During my internship at Jetson, I collaborated with a team of high school interns to provide a valuable youth perspective on business strategies, driving innovation and customer-centric solutions. I proposed and developed code for user interface improvements and automated marketing processes using Python and JavaScript. My contributions included creating interactive prototypes and implementing feedback mechanisms to better understand teenage customer needs. I also assisted in marketing initiatives and outreach programs, leveraging tools such as Google Analytics for performance tracking, Canva for promotional materials, and social media platforms like Instagram and TikTok for campaign execution, ultimately enhancing engagement with Jetson’s fintech and investment offerings.",
+  },
+  {
+    name: "Ideavate Solutions:",
+    role: "Creative Intern",
+    opinion:
+      "I worked in the creative department of Ideavate Solutions, focusing on a major project involving the redesign of the company's corporate website. My contributions included collaborating with the design and development teams to overhaul the website, enhancing the company’s style guide for consistency across digital assets, and making UI/UX improvements using Figma to ensure an intuitive user experience. I utilized tools like Adobe XD for wireframing, Sketch for high-fidelity designs, and InVision for prototyping and user testing. Additionally, I assisted in front-end development using React.js, incorporating technologies such as HTML5, CSS3, JavaScript (ES6), and Bootstrap to create responsive and interactive web pages. I also used Git for version control and Jira for project management and issue tracking.",
+  },
+];
+---
+
+<section class="bg-primary">
+  <div class="px-8 2xl:max-w-7xl mx-auto py-6">
+    <div class="mt-6 space-y-2">
+      <div class="h-0.5 bg-secondary"></div>
+      <h3 class="text-secondary text-base font-medium">
+        <span>work</span>
+        <span class="font-bold">experience</span>
+      </h3>
+      <div class="h-1.5 bg-secondary"></div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-4 text-secondary gap-6 pt-2 mt-2">
+      {
+        humanOpinions.map((opinion) => (
+         <div>
+            <p class="italic text-2xl block font-bold">
+              {opinion.name} {opinion.role}
+            </p>
+            <p class="text-sm leading-relaxed mt-6">
+              {opinion.opinion}
+            </p>
+         </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
